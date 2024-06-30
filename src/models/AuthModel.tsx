@@ -1,14 +1,15 @@
 "use client";
-import { useState} from 'react';
+import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAppDispatch } from '@/store';
 import { login } from '@/store/authSlice';
 import { AuthRequest } from '@/types';
+import { useAppSelector } from "@/store/index";
 import AuthService from '@/services/authService';
 
 interface AuthAction {
-    handleLogin: () => void;
-    handleRegister: () => void;
+    handleLogin: (e:FormEvent<HTMLFormElement>) => void;
+    handleRegister: (e:FormEvent<HTMLFormElement>) => void;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,8 +17,11 @@ const AuthModel = () => {
     const router = useRouter();
     const dispatch = useAppDispatch();
     const [payload, setPayload] = useState<AuthRequest>({email: '', password: ''});
+    const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+    if(isLoggedIn) router.push('/');
 
-    const handleLogin = () => {
+    const handleLogin = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         if (!payload.email || !payload.password) {
             console.error('Email and password are required');
             return;
@@ -30,7 +34,8 @@ const AuthModel = () => {
         }) ;
     }
 
-    const handleRegister = () => {
+    const handleRegister = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         if (!payload.email || !payload.password) {
             console.error('Email and password are required');
             return;
@@ -56,6 +61,7 @@ const AuthModel = () => {
         handleChange,
     };
     return {
+        isLoggedIn,
         payload,
         action
     };

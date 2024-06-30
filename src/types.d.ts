@@ -32,6 +32,12 @@ export interface AuthRequest {
     password: string;
 }
 
+export interface PasswordUpdateRequest {
+    oldPassword: string;
+    retypePassword: string;
+    newPassword: string;
+}
+
 export interface LoginResponse {
     user: User;
     access_token: string;
