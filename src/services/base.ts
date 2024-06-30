@@ -7,7 +7,7 @@ dotenv.config();
 
 // Create an Axios instance with base URL from .env
 const api: AxiosInstance = axios.create({
-    baseURL: process.env.API_URL || "http://localhost:3000/",
+    baseURL: "https://assessment-backend-production-7098.up.railway.app",
 });
 
 export default api;
