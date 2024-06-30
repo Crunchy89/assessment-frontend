@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import BarModel from '@/models/BarModel';
-import UserMenu from './UserMenu';
 const Navbar = () => {
     const model = BarModel();
     return (
