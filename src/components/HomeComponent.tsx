@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
@@ -13,6 +14,7 @@ const HomeComponent: React.FC<Props> = ({ children }: Props) => {
             <div className="container mx-auto">
                 {children}
             </div>
+            <Footer/>
         </>
     );
 };
