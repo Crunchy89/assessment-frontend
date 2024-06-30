@@ -12,3 +12,4 @@ after that you can use
 ```
 yarn dev
 ```
+to run the app
