@@ -1,3 +1,4 @@
+"use client";
 import AuthModel from "@/models/AuthModel";
 import Link from "next/link";
 

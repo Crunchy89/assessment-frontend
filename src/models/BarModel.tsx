@@ -1,7 +1,7 @@
 "use client"; // This directive ensures the component is rendered on the client
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from "@/store/store";
+import { useAppSelector } from "@/store/index";
 import { setSidebarState } from '@/store/sidebarSlice';
 import { logout } from '@/store/authSlice';
 import { defaultUserMenu,defaultMenu } from '@/variables/menu';

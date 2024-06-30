@@ -1,3 +1,4 @@
+"use client";
 import { SidebarState } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";

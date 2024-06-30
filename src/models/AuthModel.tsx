@@ -1,6 +1,6 @@
+"use client";
 import { useState} from 'react';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
 import { useAppDispatch } from '@/store';
 import { login } from '@/store/authSlice';
 import { AuthRequest } from '@/types';

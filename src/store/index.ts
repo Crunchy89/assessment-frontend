@@ -1,3 +1,4 @@
+"use client";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";

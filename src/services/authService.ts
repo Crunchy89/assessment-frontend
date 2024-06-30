@@ -1,3 +1,4 @@
+"use client";
 import api from './base';
 import { AuthRequest, LoginResponse, RegisterResponse } from '@/types';
 
