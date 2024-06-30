@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
@@ -8,13 +7,13 @@ interface Props {
 
 const HomeComponent: React.FC<Props> = ({ children }: Props) => {
     return (
-        <div>
+        <>
             <Navbar/>
             <Sidebar/>
             <div className="container mx-auto">
                 {children}
             </div>
-        </div>
+        </>
     );
 };
 

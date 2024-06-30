@@ -1,11 +1,13 @@
-import React from 'react';
+"use client"; // This directive ensures the component is rendered on the client
 import BarModel from '@/models/BarModel';
 import Link from 'next/link';
 
 const Sidebar = () => {
-    const model = BarModel();    
+    const model = BarModel();
+    return null;
+    if (!model.showSidebar) return null;    
     return (
-    <div className={`fixed top-0 bottom-0 left-0 right-0 bg-white bg-opacity-80 ${model.showSidebar ? 'block' : 'hidden'}`} >
+    <div className={`fixed top-0 bottom-0 left-0 right-0 bg-white bg-opacity-80`}>
         <div className="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
             <div className="text-gray-100 text-xl">
               <div className="p-2.5 mt-1 flex items-center justify-between">
@@ -19,7 +21,7 @@ const Sidebar = () => {
             {
                 model.defaultMenu.map((item) => (
                     <Link href={item.link} key={item.id} className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white" >
-                      <span className="text-[15px] ml-4 text-gray-200 font-bold">{item.title}</span>
+                      <p className="text-[15px] ml-4 text-gray-200 font-bold">{item.title}</p>
                     </Link>
                 ))
             }

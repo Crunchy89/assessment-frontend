@@ -27,15 +27,5 @@ export const defaultUserMenu: MenuItem[] = [
         id: 1,
         title: "Your Profile",
         link: "#",
-    },
-    {
-        id: 2,
-        title: "Settings",
-        link: "#",
-    },
-    {
-        id: 3,
-        title: "Sign out",
-        link: "#",
     }
 ]
